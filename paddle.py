@@ -24,13 +24,13 @@ class Paddle:
             self.segments.append(new_segment)
 
     def up(self):
-        if self.segments[-1].pos()[1] > 280:
+        if self.segments[-1].pos()[1] >= 235:
             return
         for index in range(len(self.segments)):
             self.segments[index].forward(20)
 
     def down(self):
-        if self.segments[0].pos()[1] < -260:
+        if self.segments[0].pos()[1] <= -235:
             return
         for index in range(len(self.segments)):
             self.segments[index].backward(20)
