@@ -13,7 +13,7 @@ class Ball(Turtle):
         self.setheading(random.choice(ran_angle))
 
     def move(self):
-        if not (-260 < self.ycor() < 280):
+        if not (-245 < self.ycor() < 245):
             self.setheading(-self.heading())
         self.fd(8)
 

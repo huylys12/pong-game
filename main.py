@@ -27,12 +27,12 @@ screen.onkeypress(fun=paddle_right.down, key="Down")
 is_game_on = True
 while is_game_on:
     screen.update()
-    time.sleep(0.03)
+    time.sleep(0.035)
 
     ball.move()
 
     # detect collision with paddle
-    if ball.xcor() <= -375:
+    if ball.xcor() <= -315:
         for seg in paddle_left.segments:
             if seg.distance(ball) <= 18:
                 if 0 <= ball.heading() <= 180:
@@ -41,7 +41,7 @@ while is_game_on:
                     ball.setheading(-180 - ball.heading())
                 break
 
-    if ball.xcor() >= 365:
+    if ball.xcor() >= 315:
         for seg in paddle_right.segments:
             if seg.distance(ball) <= 18:
                 if 0 <= ball.heading() <= 180:
@@ -51,20 +51,20 @@ while is_game_on:
                 break
 
     # detect collision with miss ball
-    if ball.xcor() > 400:
+    if ball.xcor() > 345:
         score.increase_score("left")
         ball.refresh()
         time.sleep(0.5)
-    if ball.xcor() < -410:
+    if ball.xcor() < -345:
         score.increase_score("right")
         ball.refresh()
         time.sleep(0.5)
 
     # game_over
     winner = None
-    if score.left_score == 3:
+    if score.left_score == 5:
         winner = "Player 1"
-    if score.right_score == 3:
+    if score.right_score == 5:
         winner = "Player 2"
     if winner:
         score.game_over(winner)

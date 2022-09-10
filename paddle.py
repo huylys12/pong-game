@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-START_POSITIONS_X = [-390, 380]
+START_POSITIONS_X = [-330, 330]
 START_POSITIONS_Y = [-40, -20, 0, 20, 40]
 
 
